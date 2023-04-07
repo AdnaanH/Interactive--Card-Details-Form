@@ -1,0 +1,324 @@
+:root{
+    --Red-input-errors: hsl(0, 100%, 66%);
+    --Active-input-border: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Space Grotesk;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    background-color: var(--White);
+    min-height: 100vh;
+}
+.wrapper{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+.hidden{
+    display: none !important;
+}
+aside{
+    position: relative;
+    padding: 10px 0px 0px 150px;
+    background-image: url(./bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 40%;
+    height: 100vh;
+}
+.card-front{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    background-image: url(./bg-card-front.png);
+    background-repeat: no-repeat;
+    display: grid;
+    width: 450px;
+    height: 300px;
+    padding: 30px 30px 30px 30px;
+}
+.card-logo{
+    display: grid;
+}
+.card-number{
+    font-size: 2.18em;
+    color: var(--White);
+    font-weight: 700;
+}
+.card-details{
+    display: flex;
+    justify-content: space-between;
+}
+.card-details span{
+    color: var(--White);
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+}
+.card-back{
+    position: absolute;
+    top:330px;
+    left: 120px;
+    background-image: url(./bg-card-back.png);
+    background-repeat: no-repeat;
+    margin-left: 90px;
+    width: 450px;
+    height: 300px;
+}
+.cvc-number{
+    color: var(--White);
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    top: 110px;
+    left: 350px;
+}
+.step{
+    position: absolute;
+    display: flex;
+    top: 25%;
+    left: 60%;
+    align-items: center;
+}
+.step-1{
+    display: grid;
+    gap: 2em;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.holder-name{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-size: 1em;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+input{
+    width: 27em;
+    height: 3em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1.3px solid var(--Light-grayish-violet);
+    font-size: 1em;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    line-height: 1.5em;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus{
+    outline: 1px solid var(--Very-dark-violet);
+}
+input::placeholder{
+    color: var(--Dark-grayish-violet);
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.error{
+    gap: 0;
+}
+.error::after{
+    content: "Cant't be blank";
+    color: var(--Red-input-errors);
+    margin-top: .75em;
+    font-weight: 500;
+}
+.err{
+    outline: 1px solid var(--Red-input-errors);
+}
+.label{
+    display: flex;
+    flex-direction: column;
+}
+.date-details{
+    display: flex;
+    gap: 1em;
+}
+.date-entered{
+    display: flex;
+    flex-direction: column;
+}
+.date-detail{
+    display: flex;
+    gap: 0.5em;
+}
+.date-detail input{
+    width: 6em;
+}
+.cvc-details{
+    display: flex;
+    flex-direction: column;
+}
+.cvc-details input{
+    width: 13.5em;
+}
+.btn button{
+    width: 27em;
+    height: 3.2em;
+    border-radius: 0.4em;
+    border: none;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    font-weight: 500;
+    font-size: 1em;
+    cursor: pointer;
+}
+.step-2{
+    flex-direction: column;
+    gap: 2.5em;
+}
+.success{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.success h1{
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.success p{
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--Dark-grayish-violet);
+}
+footer{
+    position: relative;
+    top: 100%;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+@media screen and (max-width: 1000px) {
+    body{
+        position: relative;
+        background-color: var(--White);
+        height: 100vh;
+    }
+    .wrapper{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    aside{
+        position: relative;
+        padding: 10px 0px 0px 150px;
+        background-image: url(./bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 100vh;
+        padding-top: 30px;
+    }
+    .card-front{
+        position: inherit;
+        top: 330px;
+        left: 30px;
+        background-image: url(./bg-card-front.png);
+        background-repeat: no-repeat;
+        display: grid;
+        width: 450px;
+        height: 300px;
+        padding: 30px 30px 30px 30px;
+    }
+    .card-back{
+        position: absolute;
+        top: 200px;
+        left: 140px;
+        background-image: url(./bg-card-back.png);
+        background-repeat: no-repeat;
+        margin-left: 90px;
+        width: 450px;
+        height: 300px;
+    }
+    .step{
+        position: absolute;
+        display: flex;
+        top: 650px;
+        left: 30%;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    body{
+        position: relative;
+        background-color: var(--White);
+        height: 100vh;
+    }
+    .wrapper{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    aside{
+        position: relative;
+        padding: 10px 0px 0px 150px;
+        background-image: url(./bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 100vh;
+    }
+    .card-front{
+        position: inherit;
+        top: 0px;
+        left: 0px;
+        background-image: url(./bg-card-front.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        display: grid;
+        width: 450px;
+        height: 300px;
+        padding: 30px 30px 30px 30px;
+    }
+    .card-back{
+        position: absolute;
+        top: 200px;
+        left: 140px;
+        background-size: auto;
+        background-image: url(./bg-card-back.png);
+        background-repeat: no-repeat;
+        margin-left: 90px;
+        width: 450px;
+        height: 300px;
+    }
+    .step{
+        position: absolute;
+        display: flex;
+        top: 480px;
+        left: 10%;
+        align-items: center;
+    }
+}
